@@ -1,3 +1,4 @@
+const listEl = document.getElementById("list")
 const emails = [];
 
 for (let i = 0; i < 10; i++) {
@@ -6,6 +7,9 @@ for (let i = 0; i < 10; i++) {
         .then(data => {
             const email = data.response;
             emails.push(email);
+            liEl = document.createElement('li');
+            liEl.innerText = data.response;
+            listEl.appendChild(liEl);
         })
         .catch(error => {
             console.error(error);
