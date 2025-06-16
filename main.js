@@ -1,5 +1,5 @@
-const listEl = document.getElementById("list")
-const buttonEl = document.getElementById("button")
+const listEl = document.getElementById("list");
+const buttonEl = document.getElementById("button");
 const emails = [];
 
 function fetchEmails(array, length) {
@@ -14,15 +14,15 @@ function fetchEmails(array, length) {
                 listEl.appendChild(liEl);
             })
             .catch(error => {
-                console.error(error);
+                return (error);
             });
     }
 }
 
-fetchEmails(emails, 10)
+fetchEmails(emails, 10);
 
 buttonEl.addEventListener('click', () => {
     emails.length = 0;
     listEl.innerHTML = '';
-    fetchEmails(emails, 10)
+    fetchEmails(emails, 10);
 })
